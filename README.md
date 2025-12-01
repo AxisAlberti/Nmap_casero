@@ -109,28 +109,33 @@ El alumnado deberá entregar:
 
 ---
 
+## Puertos TCP/UDP más utilizados
 
-
-
-
-## Introducción breve a Nmap
-
-Nmap (Network Mapper) es una herramienta libre y de código abierto destinada a explorar redes y evaluar su seguridad. [web:83][web:81] Permite descubrir equipos conectados, identificar puertos abiertos, servicios activos y, en muchos casos, el sistema operativo y las versiones de software que se están ejecutando. [web:84][web:85]  
-
-Funciones principales de Nmap:  
-- Descubrimiento de hosts y creación de inventarios de red. [web:84][web:94]  
-- Escaneo de puertos TCP/UDP y detección de servicios y versiones (opción `-sV`). [web:81][web:88]  
-- Detección de sistema operativo mediante análisis de huellas de la pila TCP/IP. [web:81][web:92]  
-- Uso del motor de scripts NSE (Nmap Scripting Engine) para comprobar vulnerabilidades y configuraciones inseguras. [web:81][web:89]  
-
----
-
-## Uso de Nmap por peritos informáticos
-
-Los peritos informáticos y analistas forenses utilizan Nmap como herramienta de apoyo en investigaciones de incidentes de seguridad y en la elaboración de informes periciales. [web:86][web:87] Su finalidad es documentar de forma precisa el estado de una red o equipo en un momento determinado, no atacar sistemas.  
-
-Algunos usos habituales en el ámbito pericial son:  
-- **Reconstrucción del estado de la red durante un incidente:** Nmap se emplea para identificar qué equipos están activos, qué puertos permanecen abiertos y qué servicios están expuestos en un intervalo de tiempo concreto, generando una “fotografía” técnica que se incorpora al informe pericial. [web:86][web:90]  
-- **Detección de servicios anómalos o no autorizados:** al comparar los resultados del escaneo con la configuración esperada, el perito puede localizar puertos inesperados, servicios ocultos o versiones desactualizadas de software que pueden haber sido utilizadas como vector de ataque. [web:86][web:89]  
-- **Delimitación del alcance de una intrusión:** los escaneos ayudan a identificar qué sistemas presentan indicios de compromiso o cambios relevantes en sus servicios, colaborando en la delimitación de daños y en la cadena de evidencias. [web:86][web:87]  
-- **Soporte a la redacción del informe técnico:** los resultados exportados por Nmap (en formatos de texto o XML) permiten documentar qué pruebas se realizaron, con qué parámetros y en qué momento, aportando trazabilidad y rigor metodológico al dictamen pericial. [web:86][web:98][web:95]
+| Puerto | Protocolo | Servicio principal                    | Uso habitual resumido                                                    |
+|--------|-----------|---------------------------------------|---------------------------------------------------------------------------|
+| 20     | TCP       | FTP-data                              | Canal de datos para transferencias FTP clásicas. [web:120][web:125]      |
+| 21     | TCP       | FTP                                   | Control de sesiones FTP para transferencia de archivos. [web:120][web:125] |
+| 22     | TCP       | SSH                                   | Acceso remoto seguro por consola y tunelización. [web:120][web:125]      |
+| 23     | TCP       | Telnet                                | Acceso remoto sin cifrar (obsoleto/inseguro). [web:120][web:125]         |
+| 25     | TCP       | SMTP                                  | Envío de correo electrónico entre servidores. [web:120][web:124]         |
+| 53     | TCP/UDP   | DNS                                   | Resolución de nombres de dominio a direcciones IP. [web:120][web:125]    |
+| 67/68  | UDP       | DHCP                                  | Asignación dinámica de direcciones IP en redes. [web:120][web:124]       |
+| 69     | UDP       | TFTP                                  | Transferencia simple de archivos, sin autenticación. [web:120][web:124]  |
+| 80     | TCP       | HTTP                                  | Tráfico web no cifrado (páginas web). [web:120][web:125]                 |
+| 110    | TCP       | POP3                                  | Recepción y descarga de correo en clientes. [web:120][web:125]           |
+| 123    | UDP       | NTP                                   | Sincronización horaria de sistemas en red. [web:120][web:125]            |
+| 143    | TCP       | IMAP                                  | Acceso y gestión de correo en el servidor. [web:120][web:125]            |
+| 161    | UDP       | SNMP                                  | Monitorización y gestión de dispositivos de red. [web:120][web:125]      |
+| 389    | TCP/UDP   | LDAP                                  | Directorios centralizados de usuarios y recursos. [web:120][web:125]     |
+| 443    | TCP       | HTTPS                                 | Tráfico web cifrado (HTTP sobre TLS/SSL). [web:120][web:125]             |
+| 445    | TCP       | SMB / Microsoft-DS                    | Compartición de archivos e impresoras en Windows. [web:120][web:125]     |
+| 465/587| TCP       | SMTPS / Submission                    | Envío autenticado y cifrado de correo saliente. [web:120][web:125]       |
+| 993    | TCP       | IMAPS                                 | Acceso cifrado a correo IMAP. [web:120][web:125]                          |
+| 995    | TCP       | POP3S                                 | Acceso cifrado a correo POP3. [web:120][web:125]                          |
+| 1433   | TCP       | Microsoft SQL Server                  | Servicio de base de datos SQL Server. [web:120][web:135]                 |
+| 1521   | TCP       | Oracle SQL*Net                        | Conexiones cliente-servidor a bases Oracle. [web:120][web:135]           |
+| 3306   | TCP       | MySQL / MariaDB                       | Servicio de base de datos MySQL/MariaDB. [web:120][web:133]              |
+| 3389   | TCP       | RDP                                   | Escritorio remoto de Windows. [web:120][web:125]                          |
+| 5432   | TCP       | PostgreSQL                            | Servicio de base de datos PostgreSQL. [web:120][web:133]                 |
+| 5900   | TCP       | VNC                                   | Escritorio remoto multiplataforma (VNC). [web:120][web:136]              |
+| 8080   | TCP       | HTTP alternativo / proxys             | Servicios web alternativos o proxys HTTP. [web:120][web:136]             |
