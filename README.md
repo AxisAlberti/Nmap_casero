@@ -139,3 +139,28 @@ El alumnado deberá entregar:
 | 5432   | TCP       | PostgreSQL                | Servicio de base de datos PostgreSQL.                                |
 | 5900   | TCP       | VNC                       | Escritorio remoto multiplataforma (VNC).                             |
 | 8080   | TCP       | HTTP alternativo / proxy  | Servicios web alternativos o proxys HTTP.                            |
+
+## ¿Qué es `socket` en Python?
+
+El módulo `socket` de Python proporciona la interfaz básica para trabajar con comunicaciones de red usando los protocolos estándar de Internet, principalmente TCP y UDP. Permite crear programas que se comuniquen entre sí a través de direcciones IP y números de puerto, tanto en redes locales como en Internet.  
+
+Con `socket` se pueden implementar clientes y servidores que envían y reciben datos en forma de bytes, controlando detalles como el tipo de conexión, los tiempos de espera y el tratamiento de errores de red.
+
+---
+
+## Conceptos clave para la práctica
+
+- **Familia de direcciones:** en esta práctica interesa especialmente `AF_INET`, que se usa para trabajar con direcciones IPv4 (IP y puerto).  
+- **Tipo de socket:** se utilizará un socket de tipo orientado a conexión (TCP), adecuado para comprobar si un puerto acepta conexiones o no.  
+- **Conexión a un puerto remoto:** al intentar conectar un socket a una IP y un puerto concretos, si la conexión se establece se interpreta que el puerto está abierto; si falla o expira el tiempo de espera, se considera cerrado o filtrado.  
+- **Tiempo de espera (timeout):** permite limitar cuánto tiempo se espera la respuesta antes de asumir que el puerto no responde, evitando que el programa se quede bloqueado.
+
+---
+
+## Relación con el “mini‑Nmap” de la práctica
+
+En el contexto del escáner de puertos que van a desarrollar los alumnos, el módulo `socket` se utiliza para:  
+
+- Probar de forma sistemática distintos puertos sobre una misma IP de destino.  
+- Determinar el estado de cada puerto (accesible o no) en función del resultado de la conexión.  
+- Construir a partir de esos resultados una salida legible desde terminal, simulando el comportamiento básico de una herramienta de análisis de red.
